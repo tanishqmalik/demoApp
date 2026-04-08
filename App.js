@@ -31,6 +31,9 @@ import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 // import component from './node_modules/@egjs/hammerjs/component.json';
 import HomeScreen from './screens/HomeScreen'
+import CoursesScreen from "./screens/CoursesScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+
 
 
 const Stack = createNativeStackNavigator()
@@ -47,6 +50,8 @@ export default function App() {
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Register" component={RegisterScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Courses" component={CoursesScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
@@ -54,3 +59,7 @@ export default function App() {
 }
 
 // ➜  demoapp git:(master) ✗ npx expo start --tunnel
+// git fetch origin 
+// git reset --hard origin/main
+// npm install
+// npx expo start

@@ -215,7 +215,7 @@ import {
 } from "react-native";
 import { Feather, Ionicons, AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   const [selectedCourseTab, setSelectedCourseTab] = useState("All");
   const [selectedBlogTab, setSelectedBlogTab] = useState("Popular");
   const [forumFilter, setForumFilter] = useState("Select");
@@ -626,15 +626,39 @@ export default function HomeScreen() {
       <Text style={styles.bottomNavTextActive}>Home</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.bottomNavItem}>
+    {/* <TouchableOpacity style={styles.bottomNavItem}>
       <MaterialCommunityIcons name="school-outline" size={24} color="#A5A0B2" />
       <Text style={styles.bottomNavText}>Courses</Text>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
 
-    <TouchableOpacity style={styles.bottomNavItem}>
+    <TouchableOpacity
+  style={styles.bottomNavItem}
+  onPress={() => navigation.navigate("Courses")}
+>
+  <MaterialCommunityIcons name="school-outline" size={24} color="#A5A0B2" />
+  <Text style={styles.bottomNavText}>Courses</Text>
+</TouchableOpacity>
+
+    {/* <TouchableOpacity style={styles.bottomNavItem}>
       <Feather name="user" size={22} color="#A5A0B2" />
       <Text style={styles.bottomNavText}>Profile</Text>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
+
+    {/* <TouchableOpacity
+  style={styles.bottomNavItem}
+  onPress={() => navigation.navigate("Profile")}
+>
+  <Feather name="user" size={22} color="#A5A0B2" />
+  <Text style={styles.bottomNavText}>Profile</Text>
+</TouchableOpacity> */}
+
+<TouchableOpacity
+  style={styles.bottomNavItem}
+  onPress={() => navigation.navigate("Profile")}
+>
+  <Feather name="user" size={22} color="#A5A0B2" />
+  <Text style={styles.bottomNavText}>Profile</Text>
+</TouchableOpacity>
 
     <TouchableOpacity style={styles.bottomNavItem}>
       <Feather name="more-horizontal" size={22} color="#A5A0B2" />
