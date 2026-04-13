@@ -263,7 +263,7 @@ export default function CoursesScreen({ navigation }) {
 
 <TouchableOpacity style={styles.bottomNavItem}>
   <MaterialCommunityIcons name="school" size={24} color="#151515" />
-  <Text style={styles.bottomNavTextActive}>Courses</Text>
+  <Text style={styles.bottomNavTextActiveC}>Courses</Text>
 </TouchableOpacity>
 
         {/* <TouchableOpacity style={styles.bottomNavItem}>
@@ -730,6 +730,13 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "700",
     color: "#A5A0B2",
+  },
+
+    bottomNavTextActiveC: {
+    marginTop: 6,
+    fontSize: 13,
+    fontWeight: "700",
+    color: "#111",
   },
 
   bottomNavText: {
