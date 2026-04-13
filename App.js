@@ -59,6 +59,10 @@ export default function App() {
 }
 
 // ➜  demoapp git:(master) ✗ npx expo start --tunnel
+
+
+
+// agar galti se code mein kisine kuch edits kardiye toh unko ye commands likni hai ::---
 // git fetch origin 
 // git reset --hard origin/main
 // npm install
