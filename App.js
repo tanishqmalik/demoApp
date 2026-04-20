@@ -35,6 +35,10 @@ import CoursesScreen from "./screens/CoursesScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import EventsScreen from "./screens/EventsScreen";
 import MembershipScreen from "./screens/MembershipScreen";
+import ChatsScreen from "./screens/ChatsScreen";
+import AddFriendScreen from "./screens/AddFriendScreen";
+import CreateGroupScreen from "./screens/CreateGroupScreen";
+
 
 
 
@@ -56,6 +60,9 @@ export default function App() {
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Events" component={EventsScreen} />
           <Stack.Screen name="Membership" component={MembershipScreen} />
+          <Stack.Screen name="Chats" component={ChatsScreen} />
+          <Stack.Screen name="AddFriend" component={AddFriendScreen} />
+          <Stack.Screen name="CreateGroup" component={CreateGroupScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

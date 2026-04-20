@@ -287,10 +287,13 @@ export default function CoursesScreen({ navigation }) {
   <Text style={styles.bottomNavText}>Profile</Text>
 </TouchableOpacity>
 
-        <TouchableOpacity style={styles.bottomNavItem}>
-          <Feather name="more-horizontal" size={22} color="#A5A0B2" />
-          <Text style={styles.bottomNavText}>More</Text>
-        </TouchableOpacity>
+<TouchableOpacity
+  style={styles.bottomNavItem}
+  onPress={() => navigation.navigate("Chats")}
+>
+  <Feather name="more-horizontal" size={22} color="#A5A0B2" />
+  <Text style={styles.bottomNavText}>More</Text>
+</TouchableOpacity>
       </View>
     </SafeAreaView>
   );
