@@ -33,6 +33,8 @@ import RegisterScreen from './screens/RegisterScreen'
 import HomeScreen from './screens/HomeScreen'
 import CoursesScreen from "./screens/CoursesScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import EventsScreen from "./screens/EventsScreen";
+import MembershipScreen from "./screens/MembershipScreen";
 
 
 
@@ -52,6 +54,8 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Courses" component={CoursesScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Events" component={EventsScreen} />
+          <Stack.Screen name="Membership" component={MembershipScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

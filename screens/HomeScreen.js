@@ -392,7 +392,7 @@ export default function HomeScreen({navigation}) {
           </View>
         </View>
 
-        <View style={styles.blueSection}>
+        {/* <View style={styles.blueSection}>
           <SectionHeader title="Membership Dashboard" more />
 
           <View style={styles.membershipWrap}>
@@ -402,7 +402,27 @@ export default function HomeScreen({navigation}) {
             </View>
             <Text style={styles.membershipDate}>31/08/2026</Text>
           </View>
-        </View>
+        </View> */}
+
+<TouchableOpacity onPress={() => navigation.navigate("Membership")}>
+        <View style={styles.blueSection}>
+  <SectionHeader
+    title="Membership Dashboard"
+    more
+    onMorePress={() => navigation.navigate("Membership")}
+  />
+
+  
+    <View style={styles.membershipWrap}>
+      <Text style={styles.membershipDate}>01/01/2027</Text>
+      <View style={styles.percentPill}>
+        <Text style={styles.percentPillText}>48%</Text>
+      </View>
+      <Text style={styles.membershipDate}>31/08/2026</Text>
+    </View>
+  
+</View>
+</TouchableOpacity>
 
         <View style={styles.whiteSection}>
           <View style={styles.summaryGrid}>
@@ -548,6 +568,7 @@ export default function HomeScreen({navigation}) {
           ))}
         </View>
 
+{/* <TouchableOpacity onPress={() => navigation.navigate("Events")}>
         <View style={styles.blueSection}>
           <SectionHeader title="Events" more />
 
@@ -564,6 +585,29 @@ export default function HomeScreen({navigation}) {
             ))}
           </View>
         </View>
+        </TouchableOpacity> */}
+ <TouchableOpacity onPress={() => navigation.navigate("Events")}>
+        <View style={styles.blueSection}>
+  <SectionHeader
+    title="Events"
+    more
+    onMorePress={() => navigation.navigate("Events")}
+  />
+
+  <View style={styles.eventsRow}>
+    {events.map((event, index) => (
+      <View
+        key={index}
+        style={[styles.eventCard, event.large ? styles.eventLarge : styles.eventSmall]}
+      >
+        <Image source={{ uri: event.image }} style={styles.eventImage} />
+        <Text style={styles.eventTitle}>{event.title}</Text>
+        <Text style={styles.eventSubtitle}>{event.subtitle}</Text>
+      </View>
+    ))}
+  </View>
+</View>
+</TouchableOpacity>
 
         <View style={styles.whiteSection}>
           <Text style={styles.newsletterTitle}>Get great info direct to your inbox</Text>
@@ -669,12 +713,29 @@ export default function HomeScreen({navigation}) {
   );
 }
 
-function SectionHeader({ title, more, colorTitle }) {
+// function SectionHeader({ title, more, colorTitle }) {
+//   return (
+//     <View style={styles.sectionHeader}>
+//       <Text style={[styles.sectionTitle, colorTitle ? { color: colorTitle } : null]}>{title}</Text>
+//       {more ? (
+//         <TouchableOpacity style={styles.moreWrap}>
+//           <Text style={styles.moreText}>More</Text>
+//           <Feather name="chevron-right" size={22} color="#AAA1B2" />
+//         </TouchableOpacity>
+//       ) : null}
+//     </View>
+//   );
+// }
+
+function SectionHeader({ title, more, colorTitle, onMorePress }) {
   return (
     <View style={styles.sectionHeader}>
-      <Text style={[styles.sectionTitle, colorTitle ? { color: colorTitle } : null]}>{title}</Text>
+      <Text style={[styles.sectionTitle, colorTitle ? { color: colorTitle } : null]}>
+        {title}
+      </Text>
+
       {more ? (
-        <TouchableOpacity style={styles.moreWrap}>
+        <TouchableOpacity style={styles.moreWrap} onPress={onMorePress}>
           <Text style={styles.moreText}>More</Text>
           <Feather name="chevron-right" size={22} color="#AAA1B2" />
         </TouchableOpacity>
